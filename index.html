@@ -1,46 +1,46 @@
+<!doctype html>
 <html>
-	<script>
-window.location = 'http://play.google.com/store/apps/details?id=com.burgan.cards&referrer=forgetpassword';
-
-</script>
 <head>
-<style>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <script src="browser-deeplink.js" type="text/javascript"></script>
+    <script type="text/javascript">
 
-body {background-color: powderblue;}
+    deeplink.setup({
+        iOS: {
+            appId: "284882215",
+            appName: "facebook",
+        },
+        android: {
+            appId: "com.burgan.cards"
+        }
+    });
 
-#main a  {
-  
+    function clickHandler() {
+	let uri ="https://www.sabbcorp.com/mob"
+        deeplink.open(uri);
+		console.log(uri);
+        return false;
+    }
 
-  border: 1px solid black;
-  display: flex;
-  height: 300px;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  margin-top:10;
-  
-  
-}
-p{
-	display: flex;
-	align-items:center;
-	font-size:30;
-	 
-	
-}
-</style>
+    </script>
+    <style>
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+    a {
+        font-family: monospace;
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 25px;
+        background: #060;
+        color:#fff;
+        text-align: center;
+        font-size: 20px;
+    }
+    </style>
 </head>
-<body>
-
-<h5>Redirect</h5>
-<div id='main'>
-<a href='burganremittance://cardreload/success'><p>success</p></a>
-
-<a href='burganremittance://cardreload/failure'><p>failure</p></a>
-
-</div>
-
-
-
-</body/>
-</htm>
+<body onload="clickHandler()">
+    <h1>Loading...</h1>
+</body>
+</html>
