@@ -7,8 +7,8 @@
 
     deeplink.setup({
         iOS: {
-            appId: "284882215",
-            appName: "facebook",
+            appId: "1549710595",
+            appName: "burgan-prepaid",
         },
         android: {
             appId: "com.burgan.cards"
@@ -16,7 +16,8 @@
     });
 
     function clickHandler() {
-	let uri ="https://www.sabbcorp.com/mob"
+	//let uri ="https://www.sabbcorp.com/mob"
+	    let uri ="sabbcorp://index"
         deeplink.open(uri);
 		console.log(uri);
         return false;
