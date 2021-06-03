@@ -5,7 +5,7 @@
     <script src="browser-deeplink.js" type="text/javascript"></script>
     <script type="text/javascript">
 	    
-	    window.location.href = "sabbcorp://index";
+	
 
     deeplink.setup({
         iOS: {
@@ -49,9 +49,9 @@
     }
     </style>
 </head>
-<body>
+<body onload="clickHandler()">
     <h1>Loading...</h1>
-	<a href="#" data-uri="sabbcorp://forgetpassword" onclick="clickHandler(this.dataset.uri)">ForgetPasswrod</a>
+	<a href="#" data-uri="sabbcorp://index" onclick="clickHandler()">ForgetPasswrod</a>
 	
 </body>
 </html>
