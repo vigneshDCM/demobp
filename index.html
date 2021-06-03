@@ -16,6 +16,10 @@
 	 fallback: false
     });
 	    
+	    window.onload = function() {
+    deeplink.open("sabbcorp://index");
+}
+	    
 	  
 
     function clickHandler() {
@@ -44,7 +48,7 @@
     }
     </style>
 </head>
-<body onload="clickHandler()">
+<body>
     <h1>Loading...</h1>
 </body>
 </html>
