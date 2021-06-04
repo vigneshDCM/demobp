@@ -37,7 +37,7 @@
         androidDisabled: false,
         fallback: true,
         fallbackToWeb: false,
-        delay: 5000,
+        delay: 1000,
         delta: 500
     }
 
@@ -165,7 +165,8 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
-                window.location.href = link;
+window.location.replace(link);
+             
             }
         }
     }
