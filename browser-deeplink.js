@@ -165,7 +165,7 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
-   window.location.assign(link)
+   window.location.href =link
 
              
             }
@@ -216,6 +216,7 @@
         iframe.onload = function() {
             clearTimeout(timeout);
             iframe.parentNode.removeChild(iframe);
+window.document.href=url
           
         };
 
