@@ -216,7 +216,7 @@
         iframe.onload = function() {
             clearTimeout(timeout);
             iframe.parentNode.removeChild(iframe);
-window.document.href=url
+window.location.href=uri 
           
         };
 
