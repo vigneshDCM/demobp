@@ -65,13 +65,11 @@
      * @private
      * @returns {String} App store itms-apps:// link 
      */
-    var getStoreURLiOS = function() {
-        var baseurl = "https://itunes.apple.com/gb/app";
+   var getStoreURLiOS = function() {
+        var baseurl = "itms-appss://apps.apple.com/in/app/";
         var name = settings.iOS.appName;
         var id = settings.iOS.appId; 
-     return "https://apps.apple.com/in/app/burgan-prepaid/id1549710595"
-     //   return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
-   //  return (id && name) ? (baseurl +  "id" + id) : null;
+        return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
     }
 
     /**
