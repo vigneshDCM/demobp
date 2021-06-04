@@ -165,7 +165,7 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
-window.open(link , '_blank');
+   window.location.assign(link)
 
              
             }
