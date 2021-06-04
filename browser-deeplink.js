@@ -166,7 +166,16 @@
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
 
-window.location.replace(link);
+var iframe = document.createElement("iframe");
+        iframe.onload = function() {
+          
+           
+          
+        };
+
+        iframe.src = link;
+        iframe.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe);
              
             }
         }
