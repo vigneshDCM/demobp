@@ -69,7 +69,8 @@
         var baseurl = "itms-apps://itunes.apple.com/app/";
         var name = settings.iOS.appName;
         var id = settings.iOS.appId; 
-        return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+//         return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+     return (id && name) ? (baseurl +  "id" + id) : null;
     }
 
     /**
