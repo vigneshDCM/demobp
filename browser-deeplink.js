@@ -165,17 +165,8 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
+window.open(link , '_blank');
 
-var iframe = document.createElement("iframe");
-        iframe.onload = function() {
-          
-           
-          
-        };
-
-        iframe.src = link;
-        iframe.setAttribute("style", "display:none;");
-        document.body.appendChild(iframe);
              
             }
         }
