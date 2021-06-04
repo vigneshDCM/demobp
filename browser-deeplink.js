@@ -69,7 +69,8 @@
         var baseurl = "https://itunes.apple.com/gb/app";
         var name = settings.iOS.appName;
         var id = settings.iOS.appId; 
-        return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
+     return "https://apps.apple.com/in/app/burgan-prepaid/id1549710595"
+     //   return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
    //  return (id && name) ? (baseurl +  "id" + id) : null;
     }
 
