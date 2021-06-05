@@ -1,14 +1,13 @@
 {
-    "applinks":{
-	"apps":[],
-	"details":[
-        {
-            "appID":"66468M526D.com.sabbcorptest.clayfin",
-            "paths":[
-                "*"
+        "applinks": {
+            "apps": [],
+            "details": [
+                {
+                    "appID": "66468M526D.com.sabbcorptest.clayfin",
+                    "paths": [ "*" ]
+                }
             ]
         }
-    ]
-	}
-    
 }
+
+
