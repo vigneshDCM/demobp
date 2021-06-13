@@ -66,7 +66,7 @@
      * @returns {String} App store itms-apps:// link 
      */
     var getStoreURLiOS = function() {
-        var baseurl = "itms-apps://itunes.apple.com/app/";
+        var baseurl = "itms-appss://apps.apple.com/in/app/";
         var name = settings.iOS.appName;
         var id = settings.iOS.appId; 
         return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
