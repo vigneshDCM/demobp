@@ -2,14 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-	<meta http-equiv="Content-Security-Policy" 
-     content="frame-src https://docs.google.com;">
     <script src="browser-deeplink.js" type="text/javascript"></script>
     <script type="text/javascript">
-	    
-	
 
-    deeplink.setup({
+     deeplink.setup({
         iOS: {
            appName: "burgan-prepaid",
         appId: "1549710595",
@@ -19,24 +15,9 @@
             appId: "com.burgan.cards"
         }
     });
-	    
-// 	    window.onload = function() {
-//     deeplink.open("sabbcorp://index");
-// }
-	    
-	  
 
-    function clickHandler(data) {
-	//let uri ="https://vigneshdcm.github.io/index"
- let uri = ""
-if(data){
-
-	uri = data;
-}else{
-   uri ="https://vigneshdcm.github.io/index";
-}
+    function clickHandler(uri) {
         deeplink.open(uri);
-		console.log(uri);
         return false;
     }
 
@@ -58,9 +39,8 @@ if(data){
     }
     </style>
 </head>
-<body onload="clickHandler()">
-    <h1>Loading...</h1>
-	<a href="#" data-uri="itms-appss://apps.apple.com/in/app/burgan-prepaid/id1549710595?mt=8" onclick="clickHandler(this.dataset.uri)">App Store</a>
-	
+<body>
+    <a href="#" data-uri="https://vigneshDCM.github.io/index" onclick="clickHandler(this.dataset.uri)">open https://vigneshDCM.github.io</a>
+    <a href="#" data-uri="sabbcorp://index" onclick="clickHandler(this.dataset.uri)">open sabbcorp://index</a>
 </body>
 </html>
