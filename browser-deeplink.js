@@ -65,8 +65,8 @@
      * @private
      * @returns {String} App store itms-apps:// link 
      */
-   var getStoreURLiOS = function() {
-        var baseurl = "itms-appss://apps.apple.com/in/app/";
+    var getStoreURLiOS = function() {
+        var baseurl = "itms-apps://itunes.apple.com/app/";
         var name = settings.iOS.appName;
         var id = settings.iOS.appId; 
         return (id && name) ? (baseurl + name + "/id" + id + "?mt=8") : null;
@@ -165,9 +165,7 @@
             var link = (settings.fallbackToWeb) ?  getWebLink() : getStoreLink();
             var wait = settings.delay + settings.delta;
             if (typeof link === "string" && (Date.now() - ts) < wait) {
-   window.location.href =link
-
-             
+                window.location.href = link;
             }
         }
     }
@@ -216,12 +214,11 @@
         iframe.onload = function() {
             clearTimeout(timeout);
             iframe.parentNode.removeChild(iframe);
-window.location.href=uri 
-          
+            window.location.href = uri;
         };
 
         iframe.src = uri;
-        iframe.setAttribute("style", "background-color: red;");
+        iframe.setAttribute("style", "display:none;");
         document.body.appendChild(iframe);
         
         return true;
