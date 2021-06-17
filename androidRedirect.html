@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Security-Policy" 
+     content="frame-src https://docs.google.com;">
+<script type="text/javascript">
+    var custom = "sabbcorp://index";
+    var alt = "http://www.youtube.com";
+    var g_intent = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end";
+    var timer;
+    var heartbeat;
+    var iframe_timer;
+
+    function clearTimers() {
+        clearTimeout(timer);
+        clearTimeout(heartbeat);
+        clearTimeout(iframe_timer);
+    }
+
+    function intervalHeartbeat() {
+        if (document.webkitHidden || document.hidden) {
+            clearTimers();
+        }
+    }
+
+    function tryIframeApproach() {
+        var iframe = document.createElement("iframe");
+        iframe.style.border = "none";
+        iframe.style.width = "1px";
+        iframe.style.height = "1px";
+        iframe.onload = function () {
+            document.location = alt;
+        };
+        iframe.src = custom;
+        document.body.appendChild(iframe);
+    }
+
+    function tryWebkitApproach() {
+        document.location = custom;
+        timer = setTimeout(function () {
+            document.location = alt;
+        }, 2500);
+    }
+
+    function useIntent() {
+        document.location = g_intent;
+    }
+
+    function launch_app_or_alt_url(el) {
+        heartbeat = setInterval(intervalHeartbeat, 200);
+        if (navigator.userAgent.match(/Chrome/)) {
+            useIntent();
+        } else if (navigator.userAgent.match(/Firefox/)) {
+            tryWebkitApproach();
+            iframe_timer = setTimeout(function () {
+                tryIframeApproach();
+            }, 1500);
+        } else {
+            tryIframeApproach();
+        }
+    }
+
+    function clickHandler(event) {
+        launch_app_or_alt_url($(this));
+        event.preventDefault();
+    }
+</script>
+  
+  <body onload="clickHandler()">
+    <h1>Loading...</h1>
+	
+	
+</body>
+</html>
