@@ -4,9 +4,23 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <script src="browser-deeplink.js" type="text/javascript"></script>
     <script type="text/javascript">
+        
+         var isIOS = function() {
+        return navigator.userAgent.match('iPad') || 
+               navigator.userAgent.match('iPhone') || 
+               navigator.userAgent.match('iPod');
+    }
+         
+         var isAndroid = function() {
+        return navigator.userAgent.match('Android');
+    }
 
    function myFunction() {
+        if (isAndroid()) {
  window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end";
+        } else if (isIOS()){
+            window.location ="itms-appss://apps.apple.com/in/app/burgan-prepaid/id1549710595?mt=8"
+        }
 }
     </script>
    
@@ -17,7 +31,7 @@
         <a href="intent:#Intent;scheme=sabbcorp://open?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://www.youtube.com/;end">click here</a>
      <a href="intent:#Intent;scheme=sabbcorp://index?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=market://details?id=com.burgan.cards;end">click here market</a>
     <a href="intent:#Intent;scheme=sabbcorp://index?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end">click here PlayStore NOrmal</a>
-
+    <h1>End</h1>
 </iframe>
    
 </body>
