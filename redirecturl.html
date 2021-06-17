@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Security-Policy" 
+    content="frame-src https://docs.google.com;">
 
     <script type="text/javascript">
         
@@ -16,11 +18,20 @@
     }
          
          function tryIframeApproach() {
+
+          
+
+        iframe.src = uri;
+        iframe.setAttribute("style", "display:none;");
+        document.body.appendChild(iframe);
+
+
             console.log('tryIframeApproach')  
         var iframe = document.createElement("iframe");
         iframe.style.border = "none";
-        iframe.style.width = "1px";
-        iframe.style.height = "1px";
+        iframe.style.width = "200px";
+        iframe.style.height = "200px";
+        iframe.style.backgroundClip="red"
         iframe.onload = function () {
             document.location = 'http://www.youtube.com';
         };
@@ -29,19 +40,35 @@
     }
 
     function tryWebkitApproach() {
-        document.location = custom;
+        document.location = "sabbcorp://index";
         timer = setTimeout(function () {
-            document.location = alt;
+            document.location = "http://www.youtube.com";
         }, 2500);
     }
 
    function myFunction() {
         if (isAndroid()) {
-            if (navigator.userAgent.match(/Firefox/)) {  
-                console.log('firefox')        
-            var iframe_timer = setTimeout(function () {
-                tryIframeApproach();
-            }, 1500);
+             if (navigator.userAgent.match(/Firefox/)) {  
+//                 console.log('firefox')     
+                
+//                 var iframe = document.createElement("iframe");
+//         iframe.onload = function() {
+//             console.log('firefox iframe load')     
+//             iframe.parentNode.removeChild(iframe);
+// window.location.href="sabbcorp://index" 
+          
+//         };
+
+//         iframe.src = "sabbcorp://index";
+//          iframe.setAttribute("style", "width:200px,height:200px;");
+//         document.body.appendChild(iframe);
+
+
+                // tryWebkitApproach()
+            // var iframe_timer = setTimeout(function () {
+            //     tryIframeApproach();
+            // }, 1500);
+            window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
         }else{
             console.log('others')  
             window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
@@ -57,9 +84,9 @@
 <body onload="myFunction()">
   <h1>Redirect Page</h1>
  
-        <a href="intent:#Intent;scheme=sabbcorp://open?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://www.youtube.com/;end">click here</a>
+        <!-- <a href="intent:#Intent;scheme=sabbcorp://open?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://www.youtube.com/;end">click here</a>
      <a href="intent:#Intent;scheme=sabbcorp://index?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=market://details?id=com.burgan.cards;end">click here market</a>
-    <a href="intent:#Intent;scheme=sabbcorp://index?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end">click here PlayStore NOrmal</a>
+    <a href="intent:#Intent;scheme=sabbcorp://index?url_param=index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end">click here PlayStore NOrmal</a> -->
     <h1>End</h1>
 </iframe>
    
