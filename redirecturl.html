@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <script src="browser-deeplink.js" type="text/javascript"></script>
+
     <script type="text/javascript">
         
          var isIOS = function() {
@@ -16,12 +16,13 @@
     }
          
          function tryIframeApproach() {
+            console.log('tryIframeApproach')  
         var iframe = document.createElement("iframe");
         iframe.style.border = "none";
         iframe.style.width = "1px";
         iframe.style.height = "1px";
         iframe.onload = function () {
-            document.location = 'http://www.youtube.com;
+            document.location = 'http://www.youtube.com';
         };
         iframe.src = "sabbcorp://index";
         document.body.appendChild(iframe);
@@ -36,11 +37,13 @@
 
    function myFunction() {
         if (isAndroid()) {
-            if (navigator.userAgent.match(/Firefox/)) {          
-            iframe_timer = setTimeout(function () {
+            if (navigator.userAgent.match(/Firefox/)) {  
+                console.log('firefox')        
+            var iframe_timer = setTimeout(function () {
                 tryIframeApproach();
             }, 1500);
         }else{
+            console.log('others')  
             window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
         }
  
