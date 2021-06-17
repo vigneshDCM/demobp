@@ -17,57 +17,12 @@
         return navigator.userAgent.match('Android');
     }
          
-         function tryIframeApproach() {
-
-          
-
-        iframe.src = uri;
-        iframe.setAttribute("style", "display:none;");
-        document.body.appendChild(iframe);
-
-
-            console.log('tryIframeApproach')  
-        var iframe = document.createElement("iframe");
-        iframe.style.border = "none";
-        iframe.style.width = "200px";
-        iframe.style.height = "200px";
-        iframe.style.backgroundClip="red"
-        iframe.onload = function () {
-            document.location = 'http://www.youtube.com';
-        };
-        iframe.src = "sabbcorp://index";
-        document.body.appendChild(iframe);
-    }
-
-    function tryWebkitApproach() {
-        document.location = "sabbcorp://index";
-        timer = setTimeout(function () {
-            document.location = "http://www.youtube.com";
-        }, 2500);
-    }
+    
 
    function myFunction() {
         if (isAndroid()) {
              if (navigator.userAgent.match(/Firefox/)) {  
-//                 console.log('firefox')     
-                
-//                 var iframe = document.createElement("iframe");
-//         iframe.onload = function() {
-//             console.log('firefox iframe load')     
-//             iframe.parentNode.removeChild(iframe);
-// window.location.href="sabbcorp://index" 
-          
-//         };
 
-//         iframe.src = "sabbcorp://index";
-//          iframe.setAttribute("style", "width:200px,height:200px;");
-//         document.body.appendChild(iframe);
-
-
-                // tryWebkitApproach()
-            // var iframe_timer = setTimeout(function () {
-            //     tryIframeApproach();
-            // }, 1500);
             window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
         }else{
             console.log('others')  
