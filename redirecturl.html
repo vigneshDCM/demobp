@@ -14,10 +14,36 @@
          var isAndroid = function() {
         return navigator.userAgent.match('Android');
     }
+         
+         function tryIframeApproach() {
+        var iframe = document.createElement("iframe");
+        iframe.style.border = "none";
+        iframe.style.width = "1px";
+        iframe.style.height = "1px";
+        iframe.onload = function () {
+            document.location = 'http://www.youtube.com;
+        };
+        iframe.src = "sabbcorp://index";
+        document.body.appendChild(iframe);
+    }
+
+    function tryWebkitApproach() {
+        document.location = custom;
+        timer = setTimeout(function () {
+            document.location = alt;
+        }, 2500);
+    }
 
    function myFunction() {
         if (isAndroid()) {
- window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end";
+            if (navigator.userAgent.match(/Firefox/)) {          
+            iframe_timer = setTimeout(function () {
+                tryIframeApproach();
+            }, 1500);
+        }else{
+            window.location = "intent:#Intent;scheme=https://vigneshdcm.github.io/index;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.burgan.cards;end";
+        }
+ 
         } else if (isIOS()){
             window.location ="itms-appss://apps.apple.com/in/app/burgan-prepaid/id1549710595?mt=8"
         }
