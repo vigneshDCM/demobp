@@ -1,64 +1,56 @@
 <!doctype html>
 <html>
+
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <meta http-equiv="Content-Security-Policy" 
-    content="frame-src https://docs.google.com;">
+    <meta http-equiv="Content-Security-Policy" content="frame-src https://docs.google.com;">
 
     <script type="text/javascript">
-        
-         var isIOS = function() {
-        return navigator.userAgent.match('iPad') || 
-               navigator.userAgent.match('iPhone') || 
-               navigator.userAgent.match('iPod');
-    }
-         
-         var isAndroid = function() {
-        return navigator.userAgent.match('Android');
-    }
-         
-    function GFG_Fun() {
-                  
-                  // Create anchor element.
-                  var a = document.createElement('a'); 
-                    
-                  // Create the text node for anchor element.
-                  var link = document.createTextNode("Open App in APP STORE");
-                    
-                  // Append the text node to anchor element.
-                  a.appendChild(link); 
-                    
-                  // Set the title.
-                  a.title = "Open App in APP STORE"; 
-                    
-                  // Set the href property.
-                  a.href = "itms-appss://apps.apple.com/in/app/sabbmobile/id1451809913?mt=8"; 
-                    
-                  // Append the anchor element to the body.
-                  document.body.appendChild(a); 
-              }
 
-   function myFunction() {
-        if (isAndroid()) {
-             if (navigator.userAgent.match(/Firefox/)) {  
+        var isIOS = function () {
+            return navigator.userAgent.match('iPad') ||
+                navigator.userAgent.match('iPhone') ||
+                navigator.userAgent.match('iPod');
+        }
 
-           window.location = "intent://index#Intent;scheme=sabbcorp;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end"
-        }else{
-            console.log('others')  
-            window.location = "intent://vigneshdcm.github.io/index#Intent;scheme=https;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
+        var isAndroid = function () {
+            return navigator.userAgent.match('Android');
         }
- 
-        } else if (isIOS()){
-               GFG_Fun()
+
+        function addAnchor() {
+            var a = document.createElement('a');
+            var link = document.createTextNode("Open App in APP STORE");
+            a.appendChild(link);
+            a.title = "Open App in APP STORE";
+            a.href = "itms-appss://apps.apple.com/in/app/sabbmobile/id1451809913?mt=8";
+            document.body.appendChild(a);
         }
-}
+
+        function myFunction() {
+            if (isAndroid()) {
+                if (navigator.userAgent.match(/Firefox/)) {
+
+                    window.location = "intent://vigneshdcm.github.io/index#Intent;scheme=https;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
+                } else {
+                    console.log('others')
+                    // window.location = "intent://index#Intent;scheme=sabbcorp;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end"
+                    window.location = "intent://vigneshdcm.github.io/index#Intent;scheme=https;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
+                }
+
+            } else if (isIOS()) {
+                addAnchor()
+            }
+        }
     </script>
-   
+
 </head>
+
 <body onload="myFunction()">
 
- 
-      
-   
+<h1>dfhdgjk</h1>
+
+
+
 </body>
+
 </html>
