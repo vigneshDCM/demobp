@@ -17,23 +17,39 @@
         return navigator.userAgent.match('Android');
     }
          
-    
+    function GFG_Fun() {
+                  
+                  // Create anchor element.
+                  var a = document.createElement('a'); 
+                    
+                  // Create the text node for anchor element.
+                  var link = document.createTextNode("Open App in APP STORE");
+                    
+                  // Append the text node to anchor element.
+                  a.appendChild(link); 
+                    
+                  // Set the title.
+                  a.title = "Open App in APP STORE"; 
+                    
+                  // Set the href property.
+                  a.href = "itms-appss://apps.apple.com/in/app/sabbmobile/id1451809913?mt=8"; 
+                    
+                  // Append the anchor element to the body.
+                  document.body.appendChild(a); 
+              }
 
    function myFunction() {
         if (isAndroid()) {
              if (navigator.userAgent.match(/Firefox/)) {  
 
-            window.location = "intent://vigneshdcm.github.io/index#Intent;scheme=https;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
+           window.location = "intent://index#Intent;scheme=sabbcorp;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end"
         }else{
             console.log('others')  
             window.location = "intent://vigneshdcm.github.io/index#Intent;scheme=https;package=com.sabbcorporate;S.browser_fallback_url=https://play.google.com/store/apps/details?id=com.sabb.mobilebanking;end";
         }
  
         } else if (isIOS()){
-               window.location = 'sabbcorp://index'; 
-                setTimeout(function() {  
-                window.location = "itms-appss://apps.apple.com/in/app/sabbmobile/id1451809913?mt=8"
-                }, 500);
+               GFG_Fun()
         }
 }
     </script>
